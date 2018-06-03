@@ -1,3 +1,29 @@
+1.0.6b
+------
+* Hotfix of a DBZ when no VMs or VMPools are assigned to a user
+
+1.0.6
+-----
+* Implemented password obfuscation. It makes no sense trying to encrypt credentials in a Python code as anything can be decrypted, decompiled, etc., so at least password is now obfuscated if stored.
+
+  **IMPORTANT**: If you already stored your credentials before this version, they won't match once you run your client after pulling latest changes, so expect an authentication error. Either enter the credentials again and select the "store my credentials" checkbox or remove the credentials file yourself (~/.ovirtclient).
+
+1.0.5-2
+-------
+* Added the 'reboot in progress' event
+* Fixed some uncaught exceptions
+
+1.0.5-1
+-------
+* Fix: _create_unverified_context() seems not to be present in some older versions of Python, replaced it with the proper way (creating an empty context for urlopen)
+* Improved installation instructions in README
+
+1.0.5
+-----
+* Implemented multithreading for initiating more than one viewer (improves UX as well)
+* Added the app->remote_viewer_path setting
+* Minor fixes
+
 1.0.4
 -----
 * Stripped the HTML tags on authentication errors
